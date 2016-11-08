@@ -1,0 +1,5 @@
+Run `sphinx-apidoc -o . ../../sloc_report' in this directory.
+
+This will generate `modules.rst' and `sloc_report.rst'.
+
+Then include `modules.rst' in your `index.rst' file.
