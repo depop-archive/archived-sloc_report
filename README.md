@@ -15,8 +15,8 @@ Objectives. You want a report on SLO breaches over the past day/week.
 ## API
 
     api = sloc_librato.LibratoApi(email=LIBRATO_EMAIL, token=LIBRATO_TOKEN)
-        charts = [{'threshold': 100, 'chart_name': 'Website Response Time Mean'}]
-        report.daily_report(api, 'SLO - Production Website', charts, 7)
+    charts = [{'threshold': 100, 'chart_name': 'Website Response Time Mean'}]
+    report.daily_report(api, 'SLO - Production Website', charts, 7)
 
 ## Command Line
 
@@ -121,38 +121,6 @@ CPython 2.6, and 3.0-3.2 may also work but are at this point unsupported. PyPy
 Jython_ and IronPython_ may also work, but have not been tested. If there is
 interest in support for these alternative implementations, please open a
 feature request!
-
-# Licenses
-
-The code which makes up this Python project template is licensed under the
-MIT/X11 license. Feel free to use it in your free software/open-source or
-proprietary projects.
-
-The template also uses a number of other pieces of software, whose licenses are
-listed here for convenience. It is your responsibility to ensure that these
-licenses are up-to-date for the version of each tool you are using.
-
-+------------------------+----------------------------------+
-|Project                 |License                           |
-+========================+==================================+
-|Python itself           |Python Software Foundation License|
-+------------------------+----------------------------------+
-|argparse (now in stdlib)|Python Software Foundation License|
-+------------------------+----------------------------------+
-|Sphinx                  |Simplified BSD License            |
-+------------------------+----------------------------------+
-|Paver                   |Modified BSD License              |
-+------------------------+----------------------------------+
-|colorama                |Modified BSD License              |
-+------------------------+----------------------------------+
-|flake8                  |MIT/X11 License                   |
-+------------------------+----------------------------------+
-|mock                    |Modified BSD License              |
-+------------------------+----------------------------------+
-|pytest                  |MIT/X11 License                   |
-+------------------------+----------------------------------+
-|tox                     |MIT/X11 License                   |
-+------------------------+----------------------------------+
 
 # Issues
 
