@@ -15,4 +15,4 @@ authors_string = ', '.join(authors)
 emails = ['richard@depop.com']
 license = 'MIT'
 copyright = '2016 ' + authors_string
-url = 'https://bitbucket.org/depop/sloc_report'
+url = 'https://github.com/depop/sloc_report'
