@@ -84,9 +84,13 @@ read-only API token. The following environment variables are required:
 * `LIBRATO_TEST_SPACE` - Name of a space that exists within the librato account
   and has at least one chart
 
-    paver test_integration
+To run the integration tests:
 
-#. Run the tests::
+```
+    paver test_integration
+```
+
+#. Run all the tests
 
     paver test_all
 
@@ -110,13 +114,9 @@ You should see output similar to this:
 
 # Supported Python Versions
 
-Python Project Template supports the following versions out of the box:
+* CPython 2.7
 
-* CPython 2.7, 3.3
-* PyPy 1.9
-
-CPython 2.6, and 3.0-3.2 may also work but are at this point unsupported. PyPy
-2.0.2 is known to work but is not run on Travis-CI.
+Other Pythons may also work but are at this point unsupported.
 
 Jython_ and IronPython_ may also work, but have not been tested. If there is
 interest in support for these alternative implementations, please open a
