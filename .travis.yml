@@ -3,5 +3,8 @@ language: python
 python:
   - "2.7"
 install: "pip install -r requirements-dev.txt"
-# command to run tests
-script: paver test
+script: 
+  # run unit tests
+  - paver test
+  # run linting
+  - paver lint
