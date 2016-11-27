@@ -1,5 +1,7 @@
 # Service Level Objectives Compliance Report
 
+[![Build Status](https://travis-ci.org/depop/sloc_report.svg?branch=master)](https://travis-ci.org/depop/sloc_report)
+
 Report on Service Level Objectives Compliance
 
 
