@@ -22,6 +22,21 @@ Objectives. You want a report on SLO breaches over the past day/week.
 
 ## Command Line
 
+### List Charts
+
+List all charts within a space
+
+    slocr list_charts --space 'SLO - Production Website'
+
+    Stream Metric                             Stream Name    Chart Name              Stream Source    Label
+    ----------------------------------------  -------------  ----------------------  ---------------  -------
+    prod.website.get.meter.failure.m1_rate                   Website get failures    *prod*           rate
+    prod.website.get.timer.p95                               Website get p95         *prod*           ms
+    prod.website.get.timer.mean                              Website get mean        *prod*           ms
+
+
+### Daily Report
+
     slocr daily --space 'SLO - Production Website' --chart 'Website Response Time Mean' --threshold 100 --chart 'Website Reponse Time  p95' --threshold 200 --num-days 7
 
 # Developing

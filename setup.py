@@ -273,7 +273,8 @@ setup_dict = dict(
         UNIT_TESTS_DIRECTORY)),
     install_requires=[
         'librato-metrics>=2.0.1,<2.1.0',
-        'click>=6.6,<7.0'
+        'click>=6.6,<7.0',
+        'tabulate>=0.7,<1.0',
     ] + python_version_specific_requires,
     # Allow tests to be run with `python setup.py test'.
     # TODO: parse from requirements-dev

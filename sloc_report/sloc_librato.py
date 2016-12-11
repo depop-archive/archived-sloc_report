@@ -15,9 +15,9 @@ class LibratoApi(object):
                 'Missing authentication info')
         self.connection = librato.connect(self.email, self.token)
 
-    def charts_for_space(self, dashboard):
+    def charts_for_space(self, space):
         """Return all of the charts within a space"""
-        space = self.connection.find_space(dashboard)
+        space = self.connection.find_space(space)
         charts = []
         for chart in space.charts():
             charts.insert(0, SlocChart(chart))

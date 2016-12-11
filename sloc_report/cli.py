@@ -5,6 +5,11 @@ import report
 import sloc_librato
 import click
 import os
+from tabulate import tabulate
+
+
+# DRY
+_switches = {'--space': {'help': 'Name of the Librato space'}}
 
 
 @click.group()
@@ -21,7 +26,32 @@ def cli_report(ctx, librato_email, librato_token):
 
 
 @cli_report.command()
-@click.option('--space', help='Name of the Librato space')
+@click.option('--space', help=_switches['--space']['help'])
+@click.pass_context
+def list_charts(ctx, **kwargs):
+    """List all charts within a given space"""
+    space = kwargs.get('space')
+    librato_email = ctx.obj.get('librato_email')
+    librato_token = ctx.obj.get('librato_token')
+    api = sloc_librato.LibratoApi(email=librato_email, token=librato_token)
+    charts = api.charts_for_space(space)
+    table = {
+        "Chart Name": list(map((
+            lambda x: x.chart.name), charts)),
+        "Label": list(map((
+            lambda x: x.chart.label), charts)),
+        "Stream Name": list(map((
+            lambda x: x.chart.streams[0].name), charts)),
+        "Stream Metric": list(map((
+            lambda x: x.chart.streams[0].metric), charts)),
+        "Stream Source": list(map((
+            lambda x: x.chart.streams[0].source), charts)),
+    }
+    print tabulate(table, headers="keys")
+
+
+@cli_report.command()
+@click.option('--space', help=_switches['--space']['help'])
 @click.option('--num-days', default=1, type=click.INT,
               help='Number of days to report for')
 @click.option('--chart', multiple=True,
